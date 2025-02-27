@@ -1,0 +1,143 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    tools:context=".LandingPage">
+
+    <!-- Black Overlay to darken the background -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_overlay"
+        android:alpha="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Overlay for background image -->
+    <RelativeLayout
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/netflix_bg"
+        android:alpha="0.6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Netflix Logo at the Top Left -->
+    <ImageView
+        android:id="@+id/netflixLogoText"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/netflix_logo"
+        android:contentDescription="Netflix Logo Text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <!-- App Bar with PRIVACY, SIGN IN, and More Vert in a row at the top-right -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp">
+
+        <!-- PRIVACY Button -->
+        <Button
+            android:id="@+id/privacyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRIVACY"
+            android:textColor="@android:color/white"
+            android:background="?android:attr/selectableItemBackground"
+            android:textSize="14sp"
+            android:layout_weight="1"/>
+
+        <!-- SIGN IN Button -->
+        <Button
+            android:id="@+id/signInButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIGN IN"
+            android:textColor="@android:color/white"
+            android:background="?android:attr/selectableItemBackground"
+            android:textSize="14sp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <!-- Centered Text Block with "Welcome" and price -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/getStartedButton"
+        android:layout_marginTop="150dp">
+
+        <TextView
+            android:id="@+id/unlimited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Unlimited entertainment, one low price"
+            android:textSize="50sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/monthPriceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All of Netflix, starting at just"
+            android:textSize="20sp"
+            android:textColor="@color/textGrey2"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/rupees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹ 149."
+            android:textSize="20sp"
+            android:textColor="@color/textGrey2"
+            android:layout_marginTop="0dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="70dp"
+        tools:ignore="UselessLeaf" />
+
+    <Button
+        android:id="@+id/getStartedButton"
+        android:layout_width="333dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/netflix_red"
+        android:text="Get Started"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+        />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

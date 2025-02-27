@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyApplication01" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Light theme customizations (optional) -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Dark theme customizations -->
+        <item name="colorPrimary">@android:color/black</item> <!-- Primary color as black -->
+        <item name="colorPrimaryVariant">@android:color/black</item> <!-- Primary variant color as black -->
+        <item name="colorOnPrimary">@android:color/white</item> <!-- Text color on primary black -->
+
+        <item name="colorSurface">@android:color/black</item> <!-- Surface color as black -->
+        <item name="colorOnSurface">@android:color/white</item> <!-- Text color on surfaces (e.g. buttons, cards) -->
+
+        <item name="android:textColor">@android:color/white</item> <!-- Text color default for dark theme -->
+        <item name="android:textColorSecondary">@android:color/darker_gray</item> <!-- Secondary text color -->
+        <item name="android:windowBackground">@android:color/black</item> <!-- Window background black -->
+    </style>
+
+    <!-- Inherit from Base to apply the theme -->
+    <style name="Theme.MyApplication01" parent="Base.Theme.MyApplication01" />
+</resources>

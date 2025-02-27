@@ -1,0 +1,196 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <!-- Netflix Logo and Text in a Row (Top Left Corner) -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp">
+
+        <ImageView
+            android:id="@+id/goBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="0dp"
+            android:src="@drawable/back"
+            android:contentDescription="Go back"
+            android:layout_marginEnd="20dp"
+            app:tint="@color/textGrey" />
+
+        <ImageView
+            android:id="@+id/netflixLogoText"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="0dp"
+            android:src="@drawable/netflix_text"
+            android:contentDescription="Netflix Logo Text"/>
+    </LinearLayout>
+
+    <!-- Login Form -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="119dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="30dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="30dp"> <!-- Added margin to prevent overlap with other elements -->
+
+        <!-- Email or Phone Field -->
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="Email or Phone Number"
+            android:inputType="textEmailAddress"
+            android:padding="16dp"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/textGrey" />
+
+        <!-- Password Field -->
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/textGrey" />
+
+
+        <Button
+            android:id="@+id/signInButton"
+            android:layout_width="333dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:backgroundTint="@color/netflix_red"
+            android:text="Sign In"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:textAlignment="center"
+            android:textColor="@color/textGrey"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/signInCodeButton"
+            android:layout_width="333dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:backgroundTint="@color/grey"
+            android:text="Use a Sign In Code"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <!-- Forgot Password Button -->
+        <TextView
+            android:id="@+id/forgetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="19dp"
+            android:alpha="0.7"
+            android:text="Forgot Password?"
+            android:textColor="@color/textGrey2"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/signUpForNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:alpha="0.7"
+            android:text="New to Netflix? Sign up now."
+            android:textColor="@color/textGrey2"
+            android:textSize="18dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- reCAPTCHA Disclaimer Text (Centered) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:alpha="0.7"
+                android:gravity="center"
+                android:text="Sign in is protected by Google reCAPTCHA to ensure"
+                android:textColor="@color/textGrey"
+                android:textSize="11dp" />
+
+            <!-- Row with "You're not a bot" and "Learn More" -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!-- You're not a bot text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:alpha="0.7"
+                    android:text="You're not a bot."
+                    android:textColor="@color/textGrey"
+                    android:textSize="10dp" />
+
+                <!-- Learn More (Grey, Bold) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:text="Learn More"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
