@@ -68,18 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
-                if (email.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Email is required!", Toast.LENGTH_SHORT).show();
-                }
-                else if (password.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Password is required!", Toast.LENGTH_SHORT).show();
-                }
-                else if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Please enter email and password", Toast.LENGTH_SHORT).show();
-                } else {
-
                     startActivity(new Intent(MainActivity.this, HomePage.class));
-                }
             }
         });
 

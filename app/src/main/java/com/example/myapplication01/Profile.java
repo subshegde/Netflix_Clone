@@ -1,6 +1,7 @@
 package com.example.myapplication01;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -16,11 +17,12 @@ import java.io.File;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Environment;
+import androidx.core.content.FileProvider;
 
 public class Profile extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
-    private static final int CAMERA_REQUEST = 2;
+    private static final int CAMERA_PIC_REQUEST = 2;
     private static final int PERMISSION_REQUEST_CODE = 100;
     private ImageView profileImageView;
     private ImageView editPhotoIcon;
@@ -68,14 +70,8 @@ public class Profile extends AppCompatActivity {
     }
 
     private void openCamera() {
-        // Create a file where the image will be stored
-        File photoFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "profile_photo.jpg");
-        imageUri = Uri.fromFile(photoFile);
-
-        // Create an Intent to capture an image
         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri); // Pass the URI to the camera intent
-        startActivityForResult(cameraIntent, CAMERA_REQUEST);
+        startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
     }
 
     private void openGallery() {
@@ -88,13 +84,14 @@ public class Profile extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK) {
-            if (requestCode == CAMERA_REQUEST) {
-                // Handle camera result: The image is saved to the file URI
-                profileImageView.setImageURI(imageUri); // Display the captured image in ImageView
+            if (requestCode == CAMERA_PIC_REQUEST) {
+                // Handle camera result: Retrieve the image as a Bitmap
+                Bitmap image = (Bitmap) data.getExtras().get("data");
+                profileImageView.setImageBitmap(image); // Display the captured image in ImageView
             } else if (requestCode == PICK_IMAGE_REQUEST && data != null) {
-                // Handle gallery result here
+                // Handle gallery result: Get the selected image URI
                 Uri imageUriFromGallery = data.getData();
-                profileImageView.setImageURI(imageUriFromGallery);
+                profileImageView.setImageURI(imageUriFromGallery); // Display the gallery image in ImageView
             }
         }
     }
